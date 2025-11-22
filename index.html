@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuraHub </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="title">NeuraHub </h1>
+    <div class="actions">
+      <input type="search" id="searchInput" placeholder="Search AI tools..." />
+      <select id="sortSelect">
+        <option value="recent">Sort by Recent</option>
+        <option value="name">Sort by Name (A–Z)</option>
+        <option value="category">Sort by Category</option>
+      </select>
+      <button id="themeBtn" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat-card">🧠 Total Tools: <span id="totalCount">0</span></div>
+    <div class="stat-card">⭐ Favorites: <span id="favCount">0</span></div>
+    <div class="stat-card">🧰 Custom: <span id="customCount">0</span></div>
+  </section>
+
+  <section class="filters" id="filters" aria-label="Category filters"></section>
+
+  <main>
+    <p id="toolCount" class="tool-count"></p>
+    <div id="toolsGrid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <section class="add-tool hidden" aria-label="Add new tool">
+    <h3>Add New Tool (Secret Mode)</h3>
+    <div class="add-grid">
+      <input id="toolName" placeholder="Tool name" />
+      <input id="toolCategory" placeholder="Category" />
+      <input id="toolLogo" placeholder="Logo URL (optional)" />
+      <input id="toolLink" placeholder="Website URL" />
+      <input id="toolDesc" placeholder="Short description (optional)" />
+    </div>
+    <div class="add-actions">
+      <button id="addToolBtn" class="primary">Add Tool</button>
+      <button id="clearCustomBtn" class="muted">Clear Custom</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Credits | Murali Krishna Puppala</p>
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="close">&times;</button>
+      <img id="modalLogo" class="modal-logo" alt="Tool logo" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalCategory" class="muted"></p>
+      <p id="modalDesc"></p>
+      <a id="modalLink" href="#" target="_blank" class="visit-btn">Visit Tool</a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
